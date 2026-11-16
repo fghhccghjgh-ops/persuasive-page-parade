@@ -196,3 +196,11 @@
     transition-duration: 0.01ms !important;
   }
 }
+/* Ocultar o badge do Lovable */
+#lovable-badge,
+[data-lovable-badge] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
