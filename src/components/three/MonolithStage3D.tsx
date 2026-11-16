@@ -127,7 +127,7 @@ export function MonolithStage3D({ scrollProgressRef }: MonolithStage3DProps) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         const wasVisible = isVisible;
-        isVisible = entry.isIntersecting;
+        isVisible = entry?.isIntersecting ?? false;
         if (isVisible && !wasVisible && !disposed) {
           clock.getDelta();
           tick();
@@ -172,6 +172,7 @@ export function MonolithStage3D({ scrollProgressRef }: MonolithStage3DProps) {
 
       for (let i = 0; i < pillars.length; i++) {
         const p = pillars[i];
+        if (!p) continue;
         const wave = Math.sin(elapsed * 0.9 + i * 0.55) * 0.08 * motionFactor;
         const lift = smoothScroll * (i * 0.12);
         const baseH = 1.1 + i * 0.48;

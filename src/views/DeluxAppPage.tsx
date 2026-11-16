@@ -76,7 +76,7 @@ function buildMissionsForGoal(title: string, dailyMinutes: number, daysPerWeek: 
   ];
 
   return days.map((day, idx) => {
-    const tpl = templates[idx % templates.length];
+    const tpl = templates[idx % templates.length]!;
     return {
       id: `${Date.now()}-${idx}`,
       etapa: tpl.etapa,
@@ -96,7 +96,7 @@ export function DeluxAppPage({ onNavigateHome }: DeluxAppPageProps) {
   const [plans, setPlans] = useState<GoalPlan[]>(DEFAULT_PLANS);
   const [loaded, setLoaded] = useState(false);
 
-  const [activePlanId, setActivePlanId] = useState<string>(DEFAULT_PLANS[0].id);
+  const [activePlanId, setActivePlanId] = useState<string>(DEFAULT_PLANS[0]!.id);
   const [newGoalTitle, setNewGoalTitle] = useState('');
   const [dailyMinutes, setDailyMinutes] = useState(25);
   const [daysPerWeek, setDaysPerWeek] = useState(4);
@@ -110,7 +110,7 @@ export function DeluxAppPage({ onNavigateHome }: DeluxAppPageProps) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
           setPlans(parsed);
-          setActivePlanId(parsed[0].id);
+          setActivePlanId(parsed[0]!.id);
         }
       }
     } catch {
@@ -129,7 +129,7 @@ export function DeluxAppPage({ onNavigateHome }: DeluxAppPageProps) {
   }, [plans, loaded]);
 
   const activePlan = useMemo(
-    () => plans.find((p) => p.id === activePlanId) || plans[0],
+    () => (plans.find((p) => p.id === activePlanId) ?? plans[0] ?? DEFAULT_PLANS[0]) as GoalPlan,
     [plans, activePlanId],
   );
 

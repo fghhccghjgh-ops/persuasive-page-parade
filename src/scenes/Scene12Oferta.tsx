@@ -75,7 +75,7 @@ export function Scene12Oferta({ onOpenCheckout }: Scene12OfertaProps) {
     // Trigger when price reaches upper 72% of viewport (clear reading zone)
     const triggerObserver = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           startCountdown();
         }
       },
@@ -85,7 +85,7 @@ export function Scene12Oferta({ onOpenCheckout }: Scene12OfertaProps) {
     // Reset only when completely off-screen so scrolling back replays cleanly
     const resetObserver = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) {
+        if (entry && !entry.isIntersecting) {
           hasPlayedInCurrentVisitRef.current = false;
           cancelAnimationFrame(rafId);
           window.clearTimeout(delayId);

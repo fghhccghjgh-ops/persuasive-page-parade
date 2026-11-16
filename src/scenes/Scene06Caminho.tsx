@@ -5,27 +5,27 @@ const STAGES = [
   {
     word: 'ETAPAS.',
     detail: 'Seu objetivo dividido em marcos claros e alcançáveis.',
-    threshold: [0.02, 0.2],
+    threshold: [0.02, 0.2] as [number, number],
   },
   {
     word: 'MISSÕES.',
     detail: 'Ações concretas para saber exatamente o que fazer hoje.',
-    threshold: [0.2, 0.4],
+    threshold: [0.2, 0.4] as [number, number],
   },
   {
     word: 'ROTINA.',
     detail: 'Encaixado nos horários e dias reais da sua semana.',
-    threshold: [0.4, 0.6],
+    threshold: [0.4, 0.6] as [number, number],
   },
   {
     word: 'EXECUÇÃO.',
     detail: 'Um passo de cada vez, sem paralisia por excesso.',
-    threshold: [0.6, 0.8],
+    threshold: [0.6, 0.8] as [number, number],
   },
   {
     word: 'PROGRESSO.',
     detail: 'Avanço visível que se acumula dia após dia.',
-    threshold: [0.8, 0.96],
+    threshold: [0.8, 0.96] as [number, number],
   },
 ];
 

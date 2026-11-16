@@ -40,7 +40,7 @@ export function Scene07Demonstracao() {
   const deluxY = useTransform(scrollYProgress, [0.1, 0.55], [60, 0]);
   const deluxScale = useTransform(scrollYProgress, [0.15, 0.6], [0.94, 1]);
 
-  const active = DEMO_PHASES[selectedPhase];
+  const active = DEMO_PHASES[selectedPhase] ?? DEMO_PHASES[0]!;
 
   return (
     <section

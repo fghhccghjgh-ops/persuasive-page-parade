@@ -224,8 +224,8 @@ function PossibilityBand6() {
             <motion.div
               key={cell}
               style={{
-                y: cell % 2 === 0 ? spread : undefined,
-                rotate: cell % 3 === 0 ? rotate : undefined,
+                ...(cell % 2 === 0 ? { y: spread } : {}),
+                ...(cell % 3 === 0 ? { rotate } : {}),
               }}
               className="h-20 rounded-xl delux-surface p-3 flex flex-col justify-between will-change-transform"
             >
