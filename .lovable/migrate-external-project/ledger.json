@@ -1,8 +1,44 @@
 [
-  {"capability":"code","source":"AI Studio export (delux.zip)","outcome":"migrate","status":"in_progress","next_action":"Rebuild landing page (13 scenes) and /app page on TanStack routes"},
-  {"capability":"schema/records","source":"none (browser localStorage only)","outcome":"not_applicable","status":"verified","next_action":"none"},
-  {"capability":"auth","source":"none","outcome":"not_applicable","status":"verified","next_action":"none"},
-  {"capability":"checkout","source":"VITE_CHECKOUT_URL optional external link, else local confirmation sheet","outcome":"migrate","status":"in_progress","next_action":"Preserve config; user may provide official checkout URL later"},
-  {"capability":"gemini_ai","source":"@google/genai dependency + GEMINI_API_KEY","outcome":"drop_unused","status":"verified","next_action":"No call sites in source; nothing to migrate"},
-  {"capability":"3d_scene","source":"three.js MonolithStage3D","outcome":"migrate","status":"in_progress","next_action":"Verify renders in browser"}
+ {
+  "capability": "code",
+  "source": "AI Studio export (delux.zip)",
+  "outcome": "migrate",
+  "status": "verified",
+  "next_action": "none"
+ },
+ {
+  "capability": "schema/records",
+  "source": "none (browser localStorage only)",
+  "outcome": "not_applicable",
+  "status": "verified",
+  "next_action": "none"
+ },
+ {
+  "capability": "auth",
+  "source": "none",
+  "outcome": "not_applicable",
+  "status": "verified",
+  "next_action": "none"
+ },
+ {
+  "capability": "checkout",
+  "source": "VITE_CHECKOUT_URL optional external link, else local confirmation sheet",
+  "outcome": "migrate",
+  "status": "verified",
+  "next_action": "Optional: set official checkout link (VITE_CHECKOUT_URL) when available"
+ },
+ {
+  "capability": "gemini_ai",
+  "source": "@google/genai dependency + GEMINI_API_KEY",
+  "outcome": "drop_unused",
+  "status": "verified",
+  "next_action": "No call sites in source; nothing to migrate"
+ },
+ {
+  "capability": "3d_scene",
+  "source": "three.js MonolithStage3D",
+  "outcome": "migrate",
+  "status": "verified",
+  "next_action": "none"
+ }
 ]
