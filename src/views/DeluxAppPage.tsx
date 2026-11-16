@@ -93,32 +93,40 @@ interface DeluxAppPageProps {
 }
 
 export function DeluxAppPage({ onNavigateHome }: DeluxAppPageProps) {
-  const [plans, setPlans] = useState<GoalPlan[]>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-      }
-    } catch {
-      // Fallback to default plan
-    }
-    return DEFAULT_PLANS;
-  });
+  const [plans, setPlans] = useState<GoalPlan[]>(DEFAULT_PLANS);
+  const [loaded, setLoaded] = useState(false);
 
-  const [activePlanId, setActivePlanId] = useState<string>(plans[0]?.id || DEFAULT_PLANS[0].id);
+  const [activePlanId, setActivePlanId] = useState<string>(DEFAULT_PLANS[0].id);
   const [newGoalTitle, setNewGoalTitle] = useState('');
   const [dailyMinutes, setDailyMinutes] = useState(25);
   const [daysPerWeek, setDaysPerWeek] = useState(4);
   const [showNewForm, setShowNewForm] = useState(false);
 
+  // Read saved plans after hydration so server and browser render the same first frame.
   useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setPlans(parsed);
+          setActivePlanId(parsed[0].id);
+        }
+      }
+    } catch {
+      // Fallback to default plan
+    }
+    setLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (!loaded) return;
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(plans));
     } catch {
       // Ignore storage errors
     }
-  }, [plans]);
+  }, [plans, loaded]);
 
   const activePlan = useMemo(
     () => plans.find((p) => p.id === activePlanId) || plans[0],
