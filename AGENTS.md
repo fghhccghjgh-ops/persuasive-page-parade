@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Landing page sections live in `src/scenes/`, page bodies in `src/views/`, and thin route files in `src/routes/` render them — keeps the imported scroll-story structure intact while routing stays in TanStack.
+- Colors in components use semantic tokens (`foreground`, `background`, `ink-*`, `destructive`) defined in `src/styles.css` — keeps the palette changeable in one place.
+- Browser storage is read in `useEffect`, never in a `useState` initializer — avoids SSR hydration mismatches.
