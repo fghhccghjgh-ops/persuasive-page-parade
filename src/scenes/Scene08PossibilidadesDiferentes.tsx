@@ -24,7 +24,7 @@ export function Scene08PossibilidadesDiferentes() {
       <motion.div
         style={{ y: sphere1Y }}
         aria-hidden="true"
-        className="pointer-events-none absolute right-[8%] top-20 w-52 h-52 sm:w-72 sm:h-72 rounded-full bg-[radial-gradient(circle_at_30%_28%,rgba(255,255,255,0.34),rgba(30,30,36,0.45)_52%,rgba(0,0,0,0.95)_85%)] border border-foreground/15 will-change-transform"
+        className="pointer-events-none absolute right-[8%] top-20 w-52 h-52 sm:w-72 sm:h-72 rounded-full bg-[radial-gradient(circle_at_30%_28%,color-mix(in_oklab,var(--foreground)_34%,transparent),color-mix(in_oklab,var(--ink-900)_45%,transparent)_52%,color-mix(in_oklab,var(--background)_95%,transparent)_85%)] border border-foreground/15 will-change-transform"
       />
       <motion.div
         style={{ y: sphere2Y, rotate: ringRotate }}

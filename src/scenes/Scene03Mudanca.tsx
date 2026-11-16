@@ -28,7 +28,7 @@ function ConvergingNode({
       style={{ left, top, opacity, scale }}
       className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 will-change-transform"
     >
-      <div className="w-3.5 h-3.5 rounded-full bg-foreground shadow-[0_0_24px_rgba(255,255,255,0.85)]" />
+      <div className="w-3.5 h-3.5 rounded-full bg-foreground shadow-[0_0_24px_color-mix(in_oklab,var(--foreground)_85%,transparent)]" />
       <span className="font-mono-tabular text-[11px] text-ink-400 whitespace-nowrap">
         0{index + 1}
       </span>
@@ -72,7 +72,7 @@ export function Scene03Mudanca() {
             {/* Converged horizontal luminous path */}
             <motion.div
               style={{ scaleX: pathScaleX, opacity: pathOpacity }}
-              className="absolute left-[10%] right-[10%] top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-foreground/25 via-foreground to-foreground/25 origin-center shadow-[0_0_25px_rgba(255,255,255,0.6)] will-change-transform"
+              className="absolute left-[10%] right-[10%] top-1/2 -translate-y-1/2 h-[2px] bg-gradient-to-r from-foreground/25 via-foreground to-foreground/25 origin-center shadow-[0_0_25px_color-mix(in_oklab,var(--foreground)_60%,transparent)] will-change-transform"
             />
 
             {DISPERSED_NODES.map((node, index) => (

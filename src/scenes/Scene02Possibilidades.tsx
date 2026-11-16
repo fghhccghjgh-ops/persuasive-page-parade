@@ -183,8 +183,8 @@ function PossibilityBand5() {
           <svg viewBox="0 0 360 150" className="w-full h-36 overflow-visible" aria-hidden="true">
             <defs>
               <linearGradient id="incomeArea" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset="0%" stopColor="var(--foreground)" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="var(--foreground)" stopOpacity="0" />
               </linearGradient>
             </defs>
             <path
@@ -194,10 +194,10 @@ function PossibilityBand5() {
             <path
               d="M 10 130 C 70 128, 100 105, 160 88 C 220 70, 270 40, 350 16"
               fill="none"
-              stroke="#ffffff"
+              stroke="var(--foreground)"
               strokeWidth="2.5"
             />
-            <circle cx="350" cy="16" r="5" fill="#ffffff" />
+            <circle cx="350" cy="16" r="5" fill="var(--foreground)" />
           </svg>
           <div className="flex items-center justify-between text-xs text-ink-400 font-mono-tabular mt-2">
             <span>PRIMEIRA OFERTA</span>

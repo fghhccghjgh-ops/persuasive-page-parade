@@ -60,7 +60,7 @@ export function Scene10Progresso() {
 
           <motion.div
             style={{ scale: wordScale, opacity: wordOpacity }}
-            className="font-display font-bold tracking-[-0.04em] leading-none text-foreground select-none will-change-transform text-[clamp(2.5rem,12.5vw,13rem)] drop-shadow-[0_0_60px_rgba(255,255,255,0.22)]"
+            className="font-display font-bold tracking-[-0.04em] leading-none text-foreground select-none will-change-transform text-[clamp(2.5rem,12.5vw,13rem)] drop-shadow-[0_0_60px_color-mix(in_oklab,var(--foreground)_22%,transparent)]"
           >
             PROGRESSO
           </motion.div>
@@ -79,7 +79,7 @@ export function Scene10Progresso() {
               'Será que um dia eu consigo?'
             </p>
           </div>
-          <div className="p-7 rounded-2xl border border-foreground/25 bg-ink-950/90 shadow-[0_0_50px_rgba(255,255,255,0.06)]">
+          <div className="p-7 rounded-2xl border border-foreground/25 bg-ink-950/90 shadow-[0_0_50px_color-mix(in_oklab,var(--foreground)_6%,transparent)]">
             <div className="font-mono-tabular text-xs text-ink-300">E COMEÇA A PERGUNTAR:</div>
             <p className="mt-3 font-display text-2xl sm:text-3xl text-foreground font-medium tracking-tight">
               'Qual é o próximo passo?'

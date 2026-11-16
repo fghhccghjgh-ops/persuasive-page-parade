@@ -95,7 +95,7 @@ export function Scene07Demonstracao() {
           {/* After: DELUX Structured Interactive Breakdown */}
           <motion.div
             style={{ y: deluxY, scale: deluxScale }}
-            className="lg:col-span-7 rounded-3xl delux-surface p-6 sm:p-9 shadow-[0_30px_90px_rgba(255,255,255,0.06)] overflow-hidden will-change-transform"
+            className="lg:col-span-7 rounded-3xl delux-surface p-6 sm:p-9 shadow-[0_30px_90px_color-mix(in_oklab,var(--foreground)_6%,transparent)] overflow-hidden will-change-transform"
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-foreground/10 pb-5">
               <div>

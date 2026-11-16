@@ -52,7 +52,7 @@ function StageRow({
       {/* Anchor node on the luminous beam */}
       <motion.div
         style={{ opacity: dotOpacity }}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-foreground shadow-[0_0_20px_rgba(255,255,255,0.9)]"
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-foreground shadow-[0_0_20px_color-mix(in_oklab,var(--foreground)_90%,transparent)]"
       />
 
       <div className="flex items-baseline gap-4">
@@ -95,7 +95,7 @@ export function Scene06Caminho() {
             {/* Luminous beam advancing with scroll */}
             <motion.div
               style={{ scaleY: beamScaleY }}
-              className="absolute left-[-1px] top-0 bottom-0 w-[3px] bg-gradient-to-b from-foreground/40 via-foreground to-foreground origin-top shadow-[0_0_24px_rgba(255,255,255,0.85)] will-change-transform"
+              className="absolute left-[-1px] top-0 bottom-0 w-[3px] bg-gradient-to-b from-foreground/40 via-foreground to-foreground origin-top shadow-[0_0_24px_color-mix(in_oklab,var(--foreground)_85%,transparent)] will-change-transform"
             />
 
             <div className="space-y-3 sm:space-y-5">

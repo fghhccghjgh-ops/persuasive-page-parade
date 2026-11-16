@@ -66,7 +66,7 @@ export function Scene05Delux() {
           {/* Plane 2: Calibragem de realidade (elevated focal plane) */}
           <motion.div
             style={{ y: panelCenterY }}
-            className="rounded-3xl bg-gradient-to-b from-ink-900 to-background border border-foreground/25 p-8 sm:p-9 shadow-[0_30px_90px_rgba(255,255,255,0.08)] will-change-transform"
+            className="rounded-3xl bg-gradient-to-b from-ink-900 to-background border border-foreground/25 p-8 sm:p-9 shadow-[0_30px_90px_color-mix(in_oklab,var(--foreground)_8%,transparent)] will-change-transform"
           >
             <div className="flex items-center justify-between text-xs text-ink-300 font-mono-tabular">
               <span>02 · SUA REALIDADE</span>

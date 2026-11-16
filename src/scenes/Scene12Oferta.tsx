@@ -130,7 +130,7 @@ export function Scene12Oferta({ onOpenCheckout }: Scene12OfertaProps) {
           </p>
         </motion.div>
 
-        <div className="mt-14 rounded-[2rem] delux-surface p-8 sm:p-12 max-w-xl mx-auto shadow-[0_30px_110px_rgba(255,255,255,0.09)]">
+        <div className="mt-14 rounded-[2rem] delux-surface p-8 sm:p-12 max-w-xl mx-auto shadow-[0_30px_110px_color-mix(in_oklab,var(--foreground)_9%,transparent)]">
           <div className="font-mono-tabular text-xs uppercase tracking-[0.24em] text-ink-400">
             DELUX · ACESSO VITALÍCIO
           </div>
