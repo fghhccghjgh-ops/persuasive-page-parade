@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { CheckoutDrawer } from '../components/CheckoutDrawer';
+import { CHECKOUT_CONFIG, hasExternalCheckout } from '../config/checkout';
 import { Scene01Abertura } from '../scenes/Scene01Abertura';
 import { Scene02Possibilidades } from '../scenes/Scene02Possibilidades';
 import { Scene03Mudanca } from '../scenes/Scene03Mudanca';
@@ -29,6 +30,10 @@ export function LandingPage({ onNavigateApp }: LandingPageProps) {
   });
 
   const handleOpenCheckout = () => {
+    if (hasExternalCheckout()) {
+      window.location.assign(CHECKOUT_CONFIG.officialCheckoutUrl);
+      return;
+    }
     setCheckoutOpen(true);
   };
 
